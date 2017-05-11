@@ -1,0 +1,61 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="../paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../paper-menu/paper-menu.html">
+<link rel="import" href="../paper-menu/paper-submenu.html">
+<link rel="import" href="../paper-item/paper-item.html">
+<link rel="import" href="../paper-button/paper-button.html">
+
+<!--
+`paper-menu-sizing-bug`
+
+
+@demo demo/index.html
+-->
+
+<dom-module id="paper-menu-sizing-bug">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+
+    <paper-menu-button ignore-select>
+      <paper-button raised class=dropdown-trigger>
+        Menu
+      </paper-button>
+      <paper-menu class=dropdown-content multi>
+        <paper-submenu>
+          <paper-item class="menu-trigger">
+            Submenu
+          </paper-item>
+          <paper-menu
+            class="menu-content sublist"
+          >
+            <paper-item
+              name=item
+            >
+              A paper-item with a very long string in it's content
+            </paper-item>
+          </paper-menu>
+        </paper-submenu>
+      </paper-menu>
+    </paper-menu-button>
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'paper-menu-sizing-bug',
+
+      properties: {
+        prop1: {
+          type: String,
+          value: 'paper-menu-sizing-bug',
+        },
+      },
+
+    });
+  </script>
+</dom-module>
