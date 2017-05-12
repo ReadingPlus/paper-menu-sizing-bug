@@ -1,0 +1,31 @@
+{
+  "author": "Matthijs Groen <matthijs.groen@gmail.com>",
+  "name": "chai-changes",
+  "description": "Change assertions for the Chai assertion library",
+  "keywords": [ "test", "assertion", "assert", "testing", "changes", "promises", "chai-plugin", "browser", "objects" ],
+  "version": "1.3.6",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthijsgroen/chai-changes"
+  },
+  "bugs": {
+    "url": "https://github.com/matthijsgroen/chai-changes/issues"
+  },
+  "main": "./chai-changes",
+  "devDependencies": {
+    "chai-as-promised": ">= 3.2.3",
+    "coffee-script": ">= 1.4.0",
+    "chai": ">= 1.0.0",
+    "when": "*",
+    "mocha": ">= 1.0.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://github.com/matthijsgroen/chai-changes/blob/master/LICENSE"
+    }
+  ]
+}

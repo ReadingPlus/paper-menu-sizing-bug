@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>paper-menu-sizing-bug test</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../iron-test-helpers/mock-interactions.js"></script>
+    <script src="../../chai-changes/chai-changes.js"></script>
+
+    <link rel="import" href="../paper-menu-sizing-bug.html">
+  </head>
+  <body>
+    <test-fixture id="basic">
+      <template>
+        <paper-menu-sizing-bug></paper-menu-sizing-bug>
+      </template>
+    </test-fixture>
+
+    <script>
+      suite('paper-menu-sizing-bug', function() {
+        var e;
+        var menuButton;
+        var submenu;
+        var trigger;
+        var content;
+        var width;
+        var submenuOpened;
+
+        setup(function(done){
+          e = fixture('basic');
+          menuButton = e.$$('paper-menu-button');
+          submenu = e.$$('paper-submenu');
+          trigger = e.$$('.dropdown-trigger');
+          content = menuButton.$$('.dropdown-content');
+          width = ()=>Number.parseInt(content.style['max-width'], 10);
+          submenuOpened = ()=>new Promise((resolve)=>{
+            submenu.open();
+            Polymer.dom.flush();
+            e.async(resolve, 1000);
+          });
+          menuButton.open();
+          Polymer.dom.flush();
+          e.async(done, 1000);
+        });
+
+        test('opening submenu resizes dropdown content', function(){
+          return expect(width).to.increase.when(submenuOpened);
+        })
+      });
+    </script>
+  </body>
+</html>
