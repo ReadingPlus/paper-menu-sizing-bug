@@ -1,6 +1,22 @@
 # \<paper-menu-sizing-bug\>
 
+Demonstrates bug where paper-menu does not expand to fit submenu contents in native shadow dom
 
+Steps to reproduce
+
+1. polymer serve
+2. Enable shadow dom; http://localhost:8082/components/paper-menu-sizing-bug/demo/index.html?dom=shadow adjust port if necessary
+2. Click MENU button
+3. Click submenu
+4. Menu should expand to fit contents but does not 
+
+![Works under shady DOM](shady.png)
+
+![Breaks under shadow DOM](shadow.png)
+
+Test case included
+
+Uses paper-menu-button, paper-menu, and paper-submenu.
 
 ## Install the Polymer-CLI
 
