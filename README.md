@@ -10,7 +10,11 @@ Steps to reproduce
 3. Click submenu
 4. Menu should expand to fit contents but does not 
 
+Expected behavior (Shady DOM)
+
 ![Works under shady DOM](shady.png)
+
+Actual behavior (Shadow DOM)
 
 ![Breaks under shadow DOM](shadow.png)
 
